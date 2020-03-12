@@ -1,0 +1,469 @@
+   git Command
+
+git init 
+git status
+git  add first.txt              # first.txt is file name
+git commit -m "initial commit " # initial commit is message 
+git remote add origin           #after origin give link of your github repository  
+git remote -v                   #to check successful   
+git push origin master        
+
+
+
+
+
+
+html 5
+
+
+semantic tag
+<header>
+<sidebar>
+<aside>
+<footer>
+<figure>
+
+
+#new Api
+1 local storage
+2 audio and video tags
+3 geolocation
+4 svg and canvas
+5 drag and drop
+
+
+#web storage
+1. session storage: data wiil be lost  as we close the tab or browser
+2. local storage   : data will remain save permanently until we delete the data
+
+#for angular use commands
+
+
+for generating components directly from cmd
+
+ng g c sidebar
+ng g c footer
+ng i bootsratp --save
+"node_modules/bootstrap/dist/css/bootstrap.css"
+ng g p hello   #used to create pipe direclty
+ng g s data    #used to create services
+ng s -o --port 4100   #used to open port with different server
+
+
+#app component code for day1DataBinding
+
+
+
+@Component({
+  selector: 'app-testcomponent',
+  template: `
+  <img [src]="imagePath"/>
+  <img src={{imagePath}}/>
+  <button disabled> click me</button>
+  <button [disabled]="isDisabled">click me</button>
+  <button disabled={{isDisabled}}> clik me</button> `, 
+ 
+
+  styleUrls: ['./testcomponent.component.css']
+})
+export class TestcomponentComponent implements OnInit {
+  imagePath="../assets/img/logo1.jpg"
+  isDisabled=false;
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+  
+
+}
+
+
+
+
+
+/* 
+  ` <h1 class="text-special"> Welcome Guest</h1>
+    <h1 [class]="classSuccess"> Mark </h1>
+    <h1 [class.text.success]="hasError">this is some  heading/>
+    <h1 [ngClass]="message">hello</h1>
+   `,
+ */
+
+
+
+
+
+  /* 
+  onButtonClicked(event){
+    console.log(event.type);
+    
+  }
+  onButtonClicked1(event){
+    console.log("double click");
+    
+  }
+  imagePath="../assets/img/logo1.jpg"
+  
+  isDisabled=false;
+  */
+ 
+ 
+  /* 
+classSuccess="text=success"
+hasLine=true
+hasError=true
+
+
+
+message={
+"text-success":this.hasError,
+"text-danger":!this.hasError,
+"text-underline":this.hasLine 
+*/
+
+}
+354564,124745
+
+
+routing
+
+
+routing is essential for every application and we can chage 
+
+
+localhost:4200/
+localhost:4200/login
+localhost:4200/register
+
+
+
+ng new <project-app> --routing
+
+app-routing-module.ts
+
+
+
+#angular forms
+
+here user can interact with our application.ex:login and register
+
+
+#types of forms
+
+1 Template Driven Forms(TdF)(code will write down in template,sntax is very similar to html,unit testing is quite chalenging))
+2 Model DRiven Forms or Reactive Forms( code will write down in component,)
+
+
+steps in TDF
+
+1 create basic form in html
+2 data Binding
+3 tracking form state
+3  displaying validation
+4 submit form
+ WE DO HAVE	to install forms module
+
+
+states in forms
+1 valid
+2 invalid
+3untouch
+4touch
+5dirty
+5pristine
+6
+
+
+#unit testing
+
+we test methods or functions of application individually
+
+type of testing
+1 Unit testing
+2 Integration  testing
+3 End to End testing
+
+
+Integration and End to End testing is quite expensive
+
+
+benefits of Unit testing
+
+1 we can finf smallest error in early stages .
+
+
+# Testing in Angular(by default we have jasmine and karma in angulat)
+
+
+1Jasmine(framework where we write test cases)
+2 Karma(where we run the test cases and generate report)
+
+
+Triple A rule
+A- Arrange
+A- Act
+A- Assert
+
+
+
+
+
+#Nodejs
+
+
+it is not a programming language,nor a framework.
+it is a  run time environment which allows to run jacascript code.
+
+
+now javacsript developers r full stack developers.
+javascript based frontend framework
+1 angular
+2react
+3viewjs
+
+Backened
+1 nodejs
+
+
+node --version(for checking node version)
+npm --version(for checking node package manager version)
+
+
+Exprees js
+npm i express --save(to install express)
+npm init 
+npm i nodemon -g
+
+
+
+
+
+Database
+MongodB   (in mongoDb we call tables as collections)
+
+>show dbs
+>show collections                             (for showing table)
+>db.createCollections("employees")            (for creating tables)
+>db.users.drop()                             (for deleting a table where users is a table name)
+>db.dropDatabase()                           (for droping a database)
+>db.users.find()                               (for finding data inside table)
+
+>db.users.find({'name':'mark'})               (for finding particular value in table like find names  starting with mark)
+>db.users.count()                              (for total no of rows)
+
+
+Capped collections in MongoDB(Once we created capped collection ,we cannot uncapped it.By Capped it means definning size that no of rows should be fixed,space should be fixed)
+>db.createCollection("users",{capped:true,size:1000,max:1000}
+
+
+>db.users.insertOne({'name':'mark'})                             (for inserting one value only)
+>db.users.insertMany([{'name':'mark'},{'name':'watson'}])         (for inserting one value only)
+>db.users.save({'name':'z'})                                       (it can be used for creating like insert)
+db.users.save({_id:1,name:'x'})                                  (here it can be used for update also
+
+ Embedded Collection in  MongoDb
+
+
+db.users.insert(
+{
+"name":"jindal",
+address:{
+"H.no":"111",
+"phoneNo":"9999999",
+"country":"usa"
+}
+}
+)
+
+
+
+
+spring Boot Flow 
+
+1 Route Mapping
+2 parameter destructing
+3 Json->java Object mapping
+4 Business Logic execution
+5 Java ->Json object mapping
+
+
+challenges of microservices
+1 Location transparent
+2 scalable
+3 repeatale
+4 resilient
+5Right sized
+
+
+
+1Spring Boot -core technology used in microsrvice implementation
+2 spring cloud config- handles the management of application configurations data through centralized service
+3 spring cloud service discovery-abstract away the  physical location of whre yours servers are deployed from yhe clients consuming the service.
+4spring cloud/Netflix Zuul
+5 spring cloud stream
+6 spring cloud sleuth
+7 spring cloud security -authenticate and authorization
+8 Travis and Docker-  provisioning implementations
+
+
+Dependency
+spring web
+spring boot actuator
+spring boot devtools
+eureka server
+
+
+pom.xml file
+Hoxton.SR1
+
+@EnableEurekaServer(this is annonations while doing for server)
+@EnableDiscoveryClient(this is annonations while doing for client)
+
+
+
+RestTemplate
+@SpringZuulRouting
+
+
+
+jenkins
+
+1 create a folder in c drive
+2 paste that downloaded jenkins.war in jenkins folder
+3 open cmd from there only
+4  write command >java -jar jenkins.war
+5 after complete installation ,open http://localhost:8080 and 
+   paste password present in console of that cmd in administrator password required field
+6 after that click on install suggested plugins 
+7 username: admin
+8 password follow the path C:\Users\Alchemy\.jenkins\secrets and open in notepad
+
+
+
+
+
+
+
+For jenkins plugins
+1 blue 
+2 deployement(deploy to container)
+3 delivery pipeline
+
+
+
+
+
+
+
+
+Maven 
+
+
+1 on google ,download maven and download bin zip archive i.e second link
+2 paste in folder maven, under c drive and extract there
+3 copy the path  
+4 go to windows search and search for system environment variables
+5 create a new  path variable name :MAVEN_HOME,Path Value :C:\apache-maven-3.6.3-bin\apache-maven-3.6.3
+6click on ok
+7now under system variable ,go on path and pess home button from keyboard and write %MAVEN_HOME%\bin;.;                      
+8 ok
+9 open cmd from windows icon only,no need to go inside path
+10 write mvn --version
+11  write command >java -jar jenkins.war
+12 after complete installation ,open http://localhost:8080
+13 username: admin
+14 password follow the path C:\Users\Alchemy\.jenkins\secrets and open in notepad
+15 manage jenkins and then go to Global Tool configuration
+16 click on Jdk,add jdk
+17 name : java8
+18 java_Home: C:\Program Files\Java\jdk1.8.0_231  and after that click on apply 
+19 Now for Git ,click on Git
+20 name :git
+21 path:C:\Program Files\Git                       and click apply
+22 Now for maven,click on maven
+23 name:Maven3
+24 path:C:\apache-maven-3.6.3-bin\apache-maven-3.6.3  or here u can check on cmd after writing >mvn --version
+
+
+
+
+
+
+Running program in jenkins
+
+1 create a maven project ,not a freestyle project
+2 configure that project,by clicking on source-code management and by giving path 
+  RepositoryUrl: https://github.com/15jindalrahul/JENKINS_DEMO.git 
+
+3 scrollling down go in build and there click on advanced and enable Resolve Dependencies during Pom parsing and 
+Process Plugins during Pom parsing
+
+4 save and apply
+
+
+
+
+Spring security
+dependency to add: 
+1 spring boot starter security
+
+
+csrf:cross side request forgery(just to know)
+
+
+
+                                                  March 11,2019
+
+Docker
+1 install from docker.com and change go in system tray and then in settings 
+2 open cmd and if u get error ,paste it on stackoverflow and do changes
+3 docker -machine --help
+4 docker stats
+5 docker pull alpine                 (go on dockerhub on google and search apline)
+6 docker pull ubuntu
+7 docker images
+8 docker pull openjdk                (go on dockerhub and search openjdk)
+9 docker image rm ubuntu             (to delete image if u want)
+10 docker image inspect alpine
+11 docker history 
+12 docker search mongo
+13 docker pull mongo
+
+#now first program of docker
+
+
+1 In eclipse, create a maven project .select in filter and  write org.apcahe.maven with quickStart project and version 1.4
+2 create  a file by  right clicking under project name and name would be (Dockerfile).
+3 Now we have to create a jar file ,rightclick on project and select maven build.
+4 In mavenBuild ,in goals write clean install  
+3 paste this in Dockerfile :
+
+
+
+FROM openjdk:8-jre-alpine
+COPY target/docker-0.0.1-SNAPSHOT.jar /usr/share
+WORKDIR /usr/share
+ENTRYPOINT ["java","-cp", "docker-0.0.1-SNAPSHOT.jar", "comm.myCompany.docker.App"]
+
+
+
+
+4 In above docker-0.0.1-SNAPSHOT.jar is name of jar created, we have to give this name only.
+5 In above comm.mycompany.docker is package name and App is class name
+6 From project Directory itself ,open cmd 
+7 docker  build  .  -t  "my-javase-maven-project"
+8 docker images
+9 docker run  my-javase-maven-project
+
+
+
+
+
+#now first program of docker in spring starter project (we have done Eureka server)
+
+1 everthing is same  and dependecy to add :spring web,Eureka server, spring data Actuator,spring boot devtools
+
+
+
+
+admin client
