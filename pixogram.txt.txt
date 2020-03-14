@@ -1,0 +1,11 @@
+  for front-end ,open the folder and from there open cmd and run these command
+
+
+
+1 npm i
+2 npm i cors
+3 vnpm i angularfire2
+4 npm i firebase
+5 npm i @types/node
+6 npm i aws-sdk
+7 code .
